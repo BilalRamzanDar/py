@@ -1,0 +1,47 @@
+<MyRoot>:
+    random_label: random_label
+    entered_number_input: entered_number_input
+    result_label: result_label
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Guessing Game"
+            font_size: 64
+            color: 0.92, 0.45, 0
+
+        Label:
+            id: random_label
+            text: "Generating Random Number"
+            font_size: 32
+            color: 'aqua'
+
+        TextInput:
+            id: entered_number_input
+            hint_text: "Enter Your Number"
+            font_size: 32
+            color:'blue'
+
+        Label:
+            id: result_label
+            font_size: 32
+
+        Label:
+            text: " "
+            font_size: 64
+
+        Button:
+            text: "Generate"
+            font_size: 32
+            size: 100, 50
+            color: 'crimson'
+            on_press: root.generate_number()
+            on_release: root.check_guess()
+
+        Button:
+            text: "exit"
+            font_size: 32
+            size: 20, 10
+            color: 'crimson'
+            on_press: root.exit()

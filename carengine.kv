@@ -1,0 +1,33 @@
+<MyClass>:
+    entered_command_input: entered_command_input
+    result_label: result_label
+
+    orientation: 'vertical'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Car Engine🚗"
+            font_size: 64
+            color: 0.92, 0.45, 0
+
+    Label:
+        text: "Enter command (start/stop/status/quit):"
+
+    TextInput:
+        id: entered_command_input
+        hint_text: "Enter command"
+        multiline: False
+        on_text_validate: root.check_command(self)
+        color:'aqua'
+
+    Label:
+        id: result_label
+
+    Button:
+        text: "exit"
+        font_size: 32
+        size: 20, 10
+        color: 'blue'
+        on_press: root.exit()
